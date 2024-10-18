@@ -20,7 +20,11 @@ The project also uses some external libraries that may need to be installed. See
 
 ### AS a Module 
 ```python
-???
+from Pillow import image
+import To_ASKII
+file_path = "path_to_file"
+my_image = new image.open(file_path)
+text = To_ASKII.convert_image_to_string(my_image, 180, 180)
 ```
 ### AS Program
 ```python 
