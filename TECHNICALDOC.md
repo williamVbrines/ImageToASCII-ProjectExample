@@ -129,6 +129,7 @@ Have the user be able to input a source path to an image of (PNG or JPEG), The c
 >- Cant read or write file.
 >- File does not exist.
 >- Overwriting existing file. ASK if they relay want to.
+- CHARACTER_SET the set of characters from white -> black
 #### Terminal Input Examples:
 ```CMD
 python TOASKII SOURCE_PATH MAX_WIDTH MAX_HEIGHT EXPORT_PATH
@@ -138,23 +139,80 @@ python TOASKII c:/users/USER/document/apple.png 180 keep c:/users/USER/document/
 ```
 Resizes to 180 pixels keeping aspect ratio and exporting to a text file call apple.txt
 ```CMD
-python TOASKII apple.png -1 -1 apple
+python TOASCII apple.png -1 -1 apple
 ```
 KEEPs the original width and height 
 ```CMD
-python TOASKII apple.png 
+python TOASCII apple.png 
 ```
 Displays to Standard out the full image, should warn the user if the image is large.
 ```CMD
-python TOASKII c:/users/USER/document/apple.png 
+python TOASCII c:/users/USER/document/apple.png 
 ```
 Displays to Standard out the full image, should warn the user if the image is large.
 ```CMD
-python TOASKII
+python TOASCII
 ```
 Should display a manual of sorts see [USAGE MANUAL](./USAGEMANUAL.md)
 
 ### Module 
 - A function that takes in a image returns a string separated by newlines. 
 
+## Character Brightness
+In search to find the answer to the question to what order and character set should I use to construct the image I found Paul Bourke's notes on it.
+[Character representation of grey scale images](https://paulbourke.net/dataformats/asciiart/)
+```
+Standard" character ramp for grey scale pictures, black -> white.
+	"$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`'. "
+A more convincing but shorter sequence for representing 10 levels of grey is
+   " .:-=+*#%@"
+```
+Notable the user may want to have their own character set or want to reverse the order of the characters to White -> black. Thus I will add a feature to do so as a parameter in the module and an optional argument in the terminal.
+ 
+## Pixel Value Conversion
+I knew from the start the I would need to convert the pixel's RGB value to a single gray-scale value.
+My original process was to convert to RGB value by an average.  
+```python  
+ average_pixel_vlaue = (pixel_band[0] + pixel_band[1] + pixel_band[2]) / 3
+```
+See the quality of the ASCII representation made me want to find ways to improve a pone it.  
+[Wiki Article on lightness](https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness)
+What is notable is that Luma weighted value which tries to better represent the pixels perceived lightness.
+```
+Y = 0.299 * R + 0.587 * G + 0.114 * B #SDTV
+Y = 0.212 * R + 0.701 * G + 0.087 * B #Adobe
+Y = 0.2126 * R + 0.7152 * G + 0.0722 * B #HDTV
+Y = 0.2627 * R + 0.6780 * G + 0.0593 * B #UHDTV 
+``` 
+Unsure as to which equation to use but I can test to see which is better.
 
+## Contrast and Value Range
+I know that not all images will give use the full character set range that can be used, thus decreasing the detail and visibility of shapes in an image.
+I attempted to rectify this by adjusting the gray-scale value a pone character selection by uniformly distributing the character set by the min and max gray-scale values of the image.
+```python
+ index = int( ( (len(character_set)-1) / (max - min)) * (value - min)) #Maps value uniformly to an index within range of the char_set
+```
+This does uniformly select an index however I suspect doing so would provide a decreased contrast. For if there are pixels that are outliers the min and max value will suffer. Tests and reasoning seem to conclude this by artificially adding a single high value pixel this decreased the overall contrast of the ASCII image. 
+
+A solution to this after some reasoning is to maximize the contrast of the image such that the difference between gray-scale value equals ( 255 / character_set_length ).
+
+I found maximize contrast one can simple stretch the values. See Aryaman Sharda article on [Image Processing Algorithms](https://hackernoon.com/image-processing-algorithms-adjusting-contrast-and-image-brightness-0y4y318a)
+```python 
+ newIntensity = 255 * ((intensity - minIntensity) / (maxInsenity - minIntensity))
+```
+A way to help with the outliers was suggested to pick min and max values 5% from them. probably ending in some code similar to the bellow.
+```python 
+	totalInsenity = (maxInsenity - minIntensity)
+	maxInsenity += totalInsenity * 0.05
+	minInsenity -= totalInsenity * 0.05
+	newIntensity = 255 * ((intensity - minIntensity) / (maxInsenity - minIntensity))
+	newIntensity = max(0, min(newIntensity, 255))
+```
+## Character Aspect Ratio
+One of the biggest hampers to the similarity of the original image and the out put image is the stretching that happens due to the aspect ratio of a character being different than that of a pixel.
+![Image of character measurements](./DocImages/WindowsDefaultCharcterAspectRatio.png)
+Sadly there is not a elegant simple solution to this problem that captures all character set aspect ratios. The best I can do is get close to most terminal window character aspect ratios, which is 1:2.
+
+However, I could prioritize the default Windows terminal.. 
+
+The plan is to while resizing the image to divide the height by 2 if not specified or multiply the width by 2 if not not specified. 
