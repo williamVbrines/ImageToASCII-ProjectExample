@@ -209,10 +209,14 @@ A way to help with the outliers was suggested to pick min and max values 5% from
 	newIntensity = max(0, min(newIntensity, 255))
 ```
 ## Character Aspect Ratio
-One of the biggest hampers to the similarity of the original image and the out put image is the stretching that happens due to the aspect ratio of a character being different than that of a pixel.
-![Image of character measurements](./DocImages/WindowsDefaultCharcterAspectRatio.png)
+One of the biggest hampers to the similarity of the original image and the out put image is the stretching that happens due to the aspect ratio of a character being different than that of a pixel.  
+![Image of character measurements](./DocImages/WindowsDefaultCharcterAspectRatio.png)  
 Sadly there is not a elegant simple solution to this problem that captures all character set aspect ratios. The best I can do is get close to most terminal window character aspect ratios, which is 1:2.
 
 However, I could prioritize the default Windows terminal.. 
 
 The plan is to while resizing the image to divide the height by 2 if not specified or multiply the width by 2 if not not specified. 
+
+## Real test input and output
+![test input](./DocImages/lion_input.png)
+![test output](./DocImages/lion_output.png)
