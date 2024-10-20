@@ -1,62 +1,63 @@
 # Technical doc
 This document goes in depth into the technical aspects of 
+
+## Start date **17-10-2024 (DD-MM-YYYY)**  
+
 ## Deadline
-**18-10-2024 (DD-MM-YYYY)**   
+
+- ORIGENAL Deadline **18-10-2024 (DD-MM-YYYY)**   
+- REEVALUATE Deadline **19-10-2024 (DD-MM-YYYY)**
+- Actual time of completion **20-10-2024 (DD-MM-YYYY)**  1AM
+
 On the above date we will reevaluate the deadline and determine if we will continue the project.
 ### Determining continuation of project 
 - Is the project complete if so project ends.
 - Is there other ways to accomplish the same task or goal that would spend less time?
 - Has the original purpose of the project changed.
 - Is our time better spent elsewhere.
+
+## 18-10-2024 Reevaluation 
+- On revaluation I have decided that the terminal program side of this project is not going to be implemented and focus on the module it self. 
+
+- The decision is to increase the deadline for I believe I could finish this in the next day or two in my off time. 
+- REEVALUATE Deadline **19-10-2024 (DD-MM-YYYY)**
+
+- Reasons for continuation.
+	- The module is functional and just needs some docstings to explain it a bit
+	- Time is not much of a concern currently and the weekend just started, thus time is granted.
+	- The person I am partly making this example seems okay with time being taking 
+	> "no worries take your time"
+	- Work load with is trivial now that the project is fully researched just a bit of tedious work.   
+
 ## Determining project completeness.
 - All test images are converted to ASKII into the terminal via standard out, in which must be visual similar to the original test image.
 > We will manually and subjectively verify that the standard out is similar to the test image.
 - The project is fully documented and checked for spelling errors.
 - The test images will come from the the [Image Compression Benchmark By Rawzor](https://imagecompression.info/test_images/) from the RGB 8 bit set. The images are excluded from this project. This is to have a standard image set, in case others want to test the program.
 - The test images will be converted using [GIMP](https://www.gimp.org/) to the most common formats (JPEG, PNG) for that is what we are concerned with.
-## Example Output
-Below is an image of some ASKII art that this project wants to attempt to construct similar too.
 
-![ASSKII IMAGE](https://upload.wikimedia.org/wikipedia/commons/2/24/Le%C3%B3n_ASCII.JPG)
-## Coding language 
-We will be using [python](https://www.python.org/) to construct this program.
-### Why Python
-- The person that I am making the example for is learning python, may be good for them to see code from another to learn from.
-- I need to bush up on my python skills.
-- Ease of Use, it be a simple programming language with garbage collection.
-- Wide platform support, Linx, MacOS, and Windows.
-- Don't really need an IDE for it.
-- Does not need compilation thus easier to use with Notepad++.
+## Technologies 
 
-## Version Control
-Eh I don't really need Version Control for this project but that is the last words of many people who lost their project. I am NOT willing to take that bet this time around.
-Thus I will be using GIT.
-### Branching
-- I will branch once the initial documentation is made.
-- Each branch will represent a signal task which it will be named after.
->- Once the branch is complete it looked over and will be merged.
-- Once the project is in working order aka complete a branch will be made as a release named with the project title then a version number. 
-- There is no other contributors so no other precautions or complications will be made to the GIT structure. 
-## GITHUB
+### GITHUB
 A place online to collaborate and share git repositories
-### WHY GITHUB
+#### WHY GITHUB
 - The person I am initially making this example for is known to use it.
 - For a save file not on my PC. AKA redundancy.
 - Interfaces with Git for version control.
 - Gives availability to the project. People cant access this project if it is just on my computer.
 - Familiarity, people are familiar with it and so am I.
 - User experience. 
-
+---
 ### GITHUB Desktop
 I will use [GitHub desktop](https://desktop.github.com/download/) as my interface with the GITHUB website and version control.
 #### WHY GITHUB Desktop
 - It is a bother for me and takes time to context switch each time I want to commit something to github.
 - The alternative is to use git in the terminal and that user experience is not great.
 - My well being and my user experience matters.
-
-## IDE
+---
+### IDE
 I am going to use [Notepad++](https://notepad-plus-plus.org/) and the Windows Terminal
-### WHY Notepad++
+#### WHY Notepad++
 - Syntax highlighting
 - Some auto complete
 - Easily modifiable with use of plugins.
@@ -67,19 +68,29 @@ I am going to use [Notepad++](https://notepad-plus-plus.org/) and the Windows Te
 >- And lots more.
 - Offline
 
-### Notepad++ Plugins  
-#### Markdown Panel
+#### Notepad++ Plugins  
+##### Markdown Panel
 > Allows you to preview your mark down. WHY Because the docs I make are in markdown for the use on GITHUB and I need a way to view it before I commit.  
 
-#### DSpellchek
+##### DSpellchek
 > Gives spellchecking functionality to notepad++. WHY I am not the best at spelling and in order to communicate well via docs this is a must have.
 
-### Why Windows Terminal
+#### Why Windows Terminal
 - It is what my machine runs on.
 - Supports python
 - Has great utility like most terminals
 - Has good documentation 
 - For the terminal is where the end user will most likely use this program.
+
+## Coding language 
+We will be using [python](https://www.python.org/) to construct this program.
+### Why Python
+- The person that I am making the example for is learning python, may be good for them to see code from another to learn from.
+- I need to bush up on my python skills.
+- Ease of Use, it be a simple programming language with garbage collection.
+- Wide platform support, Linx, MacOS, and Windows.
+- Don't really need an IDE for it.
+- Does not need compilation thus easier to use with Notepad++.
 
 ## Coding Guidelines  
 I would add this if I was doing a larger project. But some simple ones could be.
@@ -109,6 +120,16 @@ loraipsum loraipsum
 - Use Snake Case (Underscore Notation or Lowercase With Underscores) for variable and function names.
 - Use the [PEP-8 Guidelines](https://peps.python.org/pep-0008/)
 
+## Version Control
+Eh I don't really need Version Control for this project but that is the last words of many people who lost their project. I am NOT willing to take that bet this time around.
+Thus I will be using GIT.
+### Branching
+- I will branch once the initial documentation is made.
+- Each branch will represent a signal task which it will be named after.
+>- Once the branch is complete it looked over and will be merged.
+- Once the project is in working order aka complete a branch will be made as a release named with the project title then a version number. 
+- There is no other contributors so no other precautions or complications will be made to the GIT structure. 
+
 ## External Libraries 
 
 ### Pillow:
@@ -130,52 +151,58 @@ Sys is a command line argument reader.[SYS reference](https://docs.python.org/3/
 - argparse 
 
 ## Technical Objectives
-
-### Terminal 
-Have the user be able to input a source path to an image of (PNG or JPEG), The convert that image into an ASKII art representation in standard out.
-
-#### Terminal Input:
-- Using terminal arguments 
+### Module 
+- A function that takes in a image returns a string separated by newlines. 
 - SOURCE_PATH a required argument to the source image.
-- MAX_WIDTH an optional argument can be set to -k or keep to keep aspect ratio or an integer value representing the output width.
-- MAX_HEIGHT an optional argument can be set to -k or keep to keep aspect ratio or an integer value representing the output height.
-- EXPORT_PATH a optional argument to the export path.
-- If the user ever input bad input they should be notified and the USAGE DOC should pop up if applicable.
-- TIMES when this is not applicable is in which should inform the user:
->- Pillow not installed.
->- Cant read or write file.
->- File does not exist.
->- Overwriting existing file. ASK if they relay want to.
-- CHARACTER_SET the set of characters from white -> black
-#### Terminal Input Examples:
+- MAX_WIDTH an optional argument can be set to -1 or keep to keep aspect ratio or an integer value representing the output width. 
+- MAX_HEIGHT an optional argument can be set to -1 or keep to keep aspect ratio or an integer value representing the output height.  .  
+- CHARACTER_SET the set of characters from white -> black  
+
+~~### Terminal 
+Have the user be able to input a source path to an image of (PNG or JPEG), The convert that image into an ASKII art representation in standard out.~~
+
+~~#### Terminal Input:~~  
+~~- Using terminal arguments ~~  
+~~- SOURCE_PATH a required argument to the source image.~~  
+~~- MAX_WIDTH an optional argument can be set to -k or keep to keep aspect ratio or an integer value representing the output width.~~  
+~~- MAX_HEIGHT an optional argument can be set to -k or keep to keep aspect ratio or an integer value representing the output height.~~  
+~~- EXPORT_PATH a optional argument to the export path.~~  
+~~- If the user ever input bad input they should be notified and the USAGE DOC should pop up if applicable.~~  
+~~- TIMES when this is not applicable is in which should inform the user:~~  
+~~>- Pillow not installed.~~  
+~~>- Cant read or write file.~~  
+~~>- File does not exist.~~  
+~~>- Overwriting existing file. ASK if they relay want to.~~  
+~~- CHARACTER_SET the set of characters from white -> black~~  
+
+~~#### Terminal Input Examples:~~
 ```CMD
 python TOASKII SOURCE_PATH MAX_WIDTH MAX_HEIGHT EXPORT_PATH
 ```
 ```CMD
 python TOASKII c:/users/USER/document/apple.png 180 keep c:/users/USER/document/apple.txt
 ```
-Resizes to 180 pixels keeping aspect ratio and exporting to a text file call apple.txt
+~~Resizes to 180 pixels keeping aspect ratio and exporting to a text file call apple.txt~~
 ```CMD
 python TOASCII apple.png -1 -1 apple
 ```
-KEEPs the original width and height 
+~~KEEPs the original width and height ~~
 ```CMD
 python TOASCII apple.png 
 ```
-Displays to Standard out the full image, should warn the user if the image is large.
+~~Displays to Standard out the full image, should warn the user if the image is large.~~
 ```CMD
 python TOASCII c:/users/USER/document/apple.png 
 ```
-Displays to Standard out the full image, should warn the user if the image is large.
+~~Displays to Standard out the full image, should warn the user if the image is large.~~
 ```CMD
 python TOASCII
 ```
-Should display a manual of sorts see [USAGE MANUAL](./USAGEMANUAL.md)
+~~Should display a manual of sorts see [USAGE MANUAL](./USAGEMANUAL.md)~~
 
-### Module 
-- A function that takes in a image returns a string separated by newlines. 
+## Research Inquiries  
 
-## Character Brightness
+### Character Brightness
 In search to find the answer to the question to what order and character set should I use to construct the image I found Paul Bourke's notes on it.
 [Character representation of grey scale images](https://paulbourke.net/dataformats/asciiart/)
 ```
@@ -185,8 +212,8 @@ A more convincing but shorter sequence for representing 10 levels of grey is
    " .:-=+*#%@"
 ```
 Notable the user may want to have their own character set or want to reverse the order of the characters to White -> black. Thus I will add a feature to do so as a parameter in the module and an optional argument in the terminal.
- 
-## Pixel Value Conversion
+---
+### Pixel Value Conversion
 I knew from the start the I would need to convert the pixel's RGB value to a single gray-scale value.
 My original process was to convert to RGB value by an average.  
 ```python  
@@ -202,8 +229,8 @@ Y = 0.2126 * R + 0.7152 * G + 0.0722 * B #HDTV
 Y = 0.2627 * R + 0.6780 * G + 0.0593 * B #UHDTV 
 ``` 
 Unsure as to which equation to use but I can test to see which is better.
-
-## Contrast and Value Range
+---
+### Contrast and Value Range
 I know that not all images will give use the full character set range that can be used, thus decreasing the detail and visibility of shapes in an image.
 I attempted to rectify this by adjusting the gray-scale value a pone character selection by uniformly distributing the character set by the min and max gray-scale values of the image.
 ```python
@@ -225,7 +252,8 @@ A way to help with the outliers was suggested to pick min and max values 5% from
 	newIntensity = 255 * ((intensity - minIntensity) / (maxInsenity - minIntensity))
 	newIntensity = max(0, min(newIntensity, 255))
 ```
-## Character Aspect Ratio
+---
+### Character Aspect Ratio
 One of the biggest hampers to the similarity of the original image and the out put image is the stretching that happens due to the aspect ratio of a character being different than that of a pixel.  
 ![Image of character measurements](./DocImages/WindowsDefaultCharcterAspectRatio.png)  
 Sadly there is not a elegant simple solution to this problem that captures all character set aspect ratios. The best I can do is get close to most terminal window character aspect ratios, which is 1:2.
@@ -233,6 +261,11 @@ Sadly there is not a elegant simple solution to this problem that captures all c
 However, I could prioritize the default Windows terminal.. 
 
 The plan is to while resizing the image to divide the height by 2 if not specified or multiply the width by 2 if not not specified. 
+
+## Example Output
+Below is an image of some ASKII art that this project wants to attempt to construct similar too.
+
+![ASSKII IMAGE](https://upload.wikimedia.org/wikipedia/commons/2/24/Le%C3%B3n_ASCII.JPG)
 
 ## Real test input and output
 ![test input](./DocImages/lion_input.png)
