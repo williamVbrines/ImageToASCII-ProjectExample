@@ -15,7 +15,6 @@ Neat isn't it. However it is nice to give it to people as fluff or deterrent.
 See the project license on GITHUB or that file that strangely was removed. ;)
 """
 
-import string
 from PIL import Image
 
 ##Public
@@ -24,9 +23,9 @@ def convert_image_to_ascii(
     image : Image , 
     output_width : int = 80 , 
     output_height : int = -1 ,
-    character_set : string = " `:;+#@" , 
-    delimiter : chr = '\n'
-    ) -> string :
+    character_set : str = " `:;+#@" , 
+    delimiter : str = '\n'
+    ) -> str:
     """Converts a Pillow(PIL) Image into a string of characters that represent 
     the intensity of the pixels in the image.
     In less technical terms, this function turns an image into ASCII art.
