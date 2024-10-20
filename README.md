@@ -71,7 +71,7 @@ print( ToASCII.convert_image_to_ascii( my_image))
 ![Animation](./DocImages/SequenceExample_ASCII.gif)
 
 ---
-### Converting Images SequenceExample_Original
+### Converting Images
 
 #### INPUT 
 ![Image-Input](./DocImages/lion_input.png)
