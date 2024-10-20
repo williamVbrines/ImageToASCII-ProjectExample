@@ -84,6 +84,23 @@ I am going to use [Notepad++](https://notepad-plus-plus.org/) and the Windows Te
 ## Coding Guidelines  
 I would add this if I was doing a larger project. But some simple ones could be.
 - Use docstings to explain your modules classes and functions.
+```python  
+"""Description.
+
+Keyword arguments:
+argument (type , default value) -- description
+argument (type , default value) -- description
+    
+Return (type) -- description 
+    
+Throws:
+ERRORCODE
+ERRORCODE
+    
+NOTES: loraipsum loraipsum
+loraipsum loraipsum
+"""
+```
 - Do not abbreviate names at all.
 > If you need a comment for a variable you did not name it well.
 - When you can use a standard library.
