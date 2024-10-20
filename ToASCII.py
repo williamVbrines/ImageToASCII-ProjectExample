@@ -40,10 +40,10 @@ def convert_image_to_ascii(
         output_height (int , default -1) -- The output height in characters. 
         Set to -1 to adjust height to keep aspect ratio.
     
-        character_set (string , default \"`:;+#@\") -- The characters ordered 
+        character_set (string , default "`:;+#@") -- The characters ordered 
         from Dark -> Light that are selected to form the ASCII image.
     
-        delimiter (chr , default \'\\n\') -- The separator for each line of 
+        delimiter (chr , default '/n') -- The separator for each line of 
         characters.  
     
     Return (string) -- A string separated by newlines that represents the image
@@ -53,7 +53,7 @@ def convert_image_to_ascii(
         !!Issues may arise if you set an output height or output width to zero!!
         !!Be warred an large output width and height takes a lot of processing!!
         Another common character_set you may want to try is:
-        $@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. 
+        $@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'.
         or 
         @#+:;' 
     """
@@ -140,8 +140,9 @@ def _get_intensity_range(image : Image) -> tuple:
     Return (tuple) -- (minimum intensity , maximum intensity) 
     """
     
-    minimum_intensity = inf
-    maximum_intensity = -inf
+    #I don't want to add the math module just for INF so float("inf") it is
+    minimum_intensity = float("inf") 
+    maximum_intensity = -float("inf")
     
     for y_position in range(0, image.size[1]):
         for x_position in range(0,image.size[0]) :
