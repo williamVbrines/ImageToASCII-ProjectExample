@@ -86,7 +86,7 @@ def _resize_image_for_ascii(
     image : Image ,
     output_width : int = -1,
     output_height : int = -1,
-    char_aspect : float = 2.0
+    _char_aspect : float = 2.0
     ) -> Image :
     """Resizes the image such that each pixel represents 1 character. 
 
