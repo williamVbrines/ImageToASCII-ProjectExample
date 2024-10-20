@@ -247,7 +247,8 @@ def _safe_divied(x,y, default = 0):
     """
     try:
         return x / y
-    except ArithmeticError:
+    except ArithmeticError as err:
+        print(f"Bad division: {err}")
         return default
         
 def _clamp(value, min_value, max_value) :
