@@ -51,7 +51,7 @@ def convert_image_to_ascii(
     
     Notes:
         !!Issues may arise if you set an output height or output width to zero!!
-        !!Be warred an large output width and height takes a lot of processing!!
+        !!Be warned an large output width and height takes a lot of processing!!
         Another common character_set you may want to try is:
         $@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,\"^`'.
         or 
